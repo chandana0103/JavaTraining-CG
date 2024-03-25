@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.exception.ProductNotFoundException"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+    <fullyQualifiedTypeName name="org.mockito.Mock"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.repository.OrderRepository"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.repository.ProductRepository"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.entity.Order"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.entity.Product"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.model.CustomerModel"/>
+    <fullyQualifiedTypeName name="com.abc.ecom1.entity.Customer"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,35 @@
+Road safety
+
+class Speed{
+ String speed;
+ 
+}
+class SpeedImplementation{
+ String setSpeed(Speed s,int spd) {
+  try {
+   if(spd<30||spd>90) {
+    throw new SpeedInvalidException("SpeedInvalidException");
+   }
+   else {
+    s.speed = "Valid Speed";
+   }
+  }
+  catch(SpeedInvalidException se) {
+   s.speed = "Invalid Speed";
+   return se.toString();
+  }
+  return s.speed;
+ }
+}
+class SpeedInvalidException extends Exception{
+ public SpeedInvalidException(String s) {
+ }
+}
+public class Source {
+ public static void main(String [] args) {
+ Speed s = new Speed();
+ SpeedImplementation si = new SpeedImplementation();
+ System.out.println(si.setSpeed(s, 100));
+}
+}
+=============================================================================

@@ -1,0 +1,13 @@
+package com.abc.orderservice.service;
+
+import com.abc.orderservice.entity.OrderEntity;
+
+public interface OrderService {
+	
+	//public Order addOrder(Order order);
+	
+	public OrderEntity saveOrder(OrderEntity order);
+	
+	public  OrderEntity getOrderDetails(int orderId);
+
+}

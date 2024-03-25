@@ -1,0 +1,63 @@
+class ExceptionImplementation
+{
+    public String checkForException(double number1,double number2,char opr)
+    {
+        if(opr=='+' || opr=='-' ||opr=='*' || opr=='/')
+        {
+            try
+            {
+                if(opr=='/' && number2==0.0)
+                throw new Exception();
+            }
+            catch(Exception e)
+            {
+                return "Division by zero results in infinity";
+            }
+        }
+        else
+        {
+         if(opr!='+' || opr!='-' ||opr!='*' || opr!='/')   
+         {
+            try
+            {
+                throw new Exception();
+            }
+            catch(Exception e)
+            {
+                return opr+" is not a valid operator";
+            }
+         }
+         else
+         return "No Exception Found";
+        }
+    }
+    public double compute(double val1,double val2,char opr)
+    {
+        if(opr=='+')
+        return val1+val2;
+        
+        if(opr=='-')
+        return val1-val2;
+        
+        if(opr=='*')
+        return val1*val2;
+        
+        if(opr=='/')
+        return val1/val2;
+    }
+}
+class DivideByZeroException extends Exception
+{
+    public DivideByZeroException(String s)
+    {
+        super(s);
+    }
+    
+}
+class MultiplyByZeroException extends Exception
+{
+    public MultiplyByZeroException(String s)
+    {
+        super(s);
+    }
+}

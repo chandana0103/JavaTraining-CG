@@ -1,0 +1,77 @@
+package com.abc.ecom.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abc.ecom.entity.CustomerEntity;
+import com.abc.ecom.exception.CustomerNotFoundException;
+import com.abc.ecom.repository.CustomerRepository;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	@Override
+
+	public CustomerEntity saveCustomer(CustomerEntity customer) {
+
+		//convert model to entity		
+		CustomerEntity customerEntity = new CustomerEntity();
+		customerEntity.setCustomerName(customer.getCustomerName());
+		//set all the values
+		
+		CustomerEntity savedCustomerEntity = customerRepository.save(customerEntity);
+		
+		//convert entity to model		
+		Customer newCustomer = new Customer();
+		customer.setCustomerId(savedCustomerEntity.getCustomerId());
+		customer.setCustomerName(savedCustomerEntity.getCustomerName());
+		//set all the values
+		
+		
+		return newCustomer;
+	}
+
+	@Override
+	 public List<CustomerEntity> getAllCustomers() {
+		List<CustomerEntity> customers = customerRepository.findAll();
+		return customers;
+	}
+
+	@Override
+	public CustomerEntity getCustomerById(int customerId) throws CustomerNotFoundException {
+		Optional<CustomerEntity> optionalCustomer = customerRepository.findById(customerId);
+		if (optionalCustomer.isEmpty()) {
+			throw new CustomerNotFoundException("Sorry! Customer not found with id" + customerId);
+		}
+		return optionalCustomer.get();
+	}
+
+	@Override
+	 public void deleteCustomer(int customerId) {
+		Optional<CustomerEntity> optionalCustomer = customerRepository.findById(customerId);
+		if (optionalCustomer.isPresent()) {
+			customerRepository.deleteById(customerId);
+		} else {
+			throw new CustomerNotFoundException("sorry customer is not existing with id:" + customerId);
+		}
+	}
+
+	@Override
+	 public CustomerEntity updateCustomer(CustomerEntity customer) {
+		Optional<CustomerEntity> optionalCustomer = customerRepository.findById(customer.getCustomerId());
+		if (optionalCustomer.isEmpty()) {
+			throw new CustomerNotFoundException("Sorry! customer not found with id" + customer.getCustomerId());
+		}
+		CustomerEntity updatedCustomer = customerRepository.save(customer);
+		return updatedCustomer;
+
+	}
+	
+
+}

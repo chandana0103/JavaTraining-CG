@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+     <!--  To enable annotations in our project --> 
+    <context:annotation-config />
+
+	<bean id="shapeObj" class="com.abc.springdemo2.bean.Square">   
+		<property name="side" value="4"></property>        
+	</bean>
+	
+	<bean id="shapeObj2" class="com.abc.springdemo2.bean.Circle">   
+		<property name="radius" value="2"></property>        
+	</bean>
+	
+	<bean id="shapeService"	class="com.abc.springdemo2.service.ShapeService"> 
+	 		
+	</bean>
+
+</beans>

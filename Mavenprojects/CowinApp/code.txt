@@ -1,0 +1,70 @@
+public class EntityModelUtil {
+
+	public static VaccineEntity vaccineModelToEntity(VaccineModel vaccineModel) {
+
+		VaccineEntity vaccineEntity = new VaccineEntity();
+		vaccineEntity.setVaccineId(vaccineModel.getVaccineId());
+		vaccineEntity.setVaccineName(vaccineModel.getVaccineName());
+		vaccineEntity.setManufactureDate(vaccineModel.getManufactureDate());
+		vaccineEntity.setExpiryDate(vaccineModel.getExpiryDate());
+		vaccineEntity.setCompanyName(vaccineModel.getCompanyName());
+
+		return vaccineEntity;
+	}
+
+	public static VaccineModel vaccineEntityToModel(VaccineEntity vaccineEntity) {
+
+		VaccineModel vaccineModel = new VaccineModel();
+		vaccineModel.setVaccineId(vaccineEntity.getVaccineId());
+		vaccineModel.setVaccineName(vaccineEntity.getVaccineName());
+		vaccineModel.setManufactureDate(vaccineEntity.getManufactureDate());
+		vaccineModel.setExpiryDate(vaccineEntity.getExpiryDate());
+		vaccineModel.setCompanyName(vaccineEntity.getCompanyName());
+
+		return vaccineModel;
+	}
+}
+
+
+
+
+@Service
+public class AdiminVaccineServiceImpl implements AdminVaccineService {
+	
+	@Autowired
+	private VaccineRepository vaccineRepository;
+	
+	@Override
+	public VaccineModel saveVaccine(VaccineModel vaccineModel) {
+		    
+		VaccineEntity vaccineEntity = vaccineRepository.save(EntityModelUtil.vaccineModelToEntity(vaccineModel));
+		
+		return EntityModelUtil.vaccineEntityToModel(vaccineEntity);
+	}
+	
+	@Override
+	public VaccineModel updateVaccine(VaccineModel vaccineModel) {
+		Optional<VaccineEntity> optionalVaccine = vaccineRepository.findById(vaccineModel.getVaccineId());
+		
+		if(optionalVaccine.isEmpty()) {
+			throw new VaccineNotFoundException("Sorry! Vaccine is not available with id given : "+vaccineModel.getVaccineId());
+		}
+	   
+		VaccineEntity updatedVaccineEntity = vaccineRepository.save(EntityModelUtil.vaccineModelToEntity(vaccineModel));
+		
+		return EntityModelUtil.vaccineEntityToModel(updatedVaccineEntity);
+	}
+	
+	@Override
+	public void deleteVaccine(int vaccineId) {
+	
+		Optional<VaccineEntity> optionalVaccine= vaccineRepository.findById(vaccineId);
+		
+		if(optionalVaccine.isPresent()) {			
+			vaccineRepository.deleteById(vaccineId);			
+		}
+		else {
+			throw new VaccineNotFoundException("Sorry! Vaccine is not available with id given: "+vaccineId);
+		}		
+	}
+}

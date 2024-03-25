@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------
+Collection
+-------------------------------------------------------------------------
+
+Write a Java Program which will have  :-
+-class OperationDemo  
+with 4 methods as -
+1. int getTotalCount(ArrayList<Integer> list) - This method should accept Integer arraylist and return total number of objects present in the list.
+2. Integer getSumOfValues(ArrayList<Integer> list) - This method should accept Integer arraylist and return the sum calculated of the integer values in the list.
+3. ArrayList<Integer> modifyMinimumNumber(ArrayList<Integer> list) - This method should accept Integer arraylist and find the first minimum number from the left and replace it with the value 999 and return the updated ArrayList.
+4. Integer getValueAt(ArrayList<Integer> list, int n) - This method should accept Integer arraylist and find the value at nth index and return it.
+
+Also write clas Demo with main() method and call all the methods given in class OperationDemo.

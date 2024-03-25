@@ -1,0 +1,23 @@
+user service - Ashish
+------------
+ -add state,district,pincode
+
+
+vaccination center service - karan
+--------------------------
+-add ,update, delete center
+
+
+appointment service - vikas
+-------------------
+-booking , canceling
+
+vaccine service - chandana
+---------------
+ -add,update,delete vaccine
+
+vaccinated service - aravind
+------------------
+-add dose ,add center details
+
+

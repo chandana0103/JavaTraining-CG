@@ -1,0 +1,23 @@
+class Contact{
+    HashMap<String,String> map;
+    Contact(){
+        map=new HashMap<String,String>();
+    }
+    public String addContact(String name,String contact){
+        if(map.containsKey(name))
+            return "Adding Contach Failed, name already present";
+        map.put(name,contact);
+        return "Contact Saved";
+    }
+    public String deleteContact(String name){
+        if(!hm.containsKey(name))
+            return "No contact found";
+        map.remove(name);
+        return "Contact deleted successfully"
+    }
+    public String searchContact(String name){
+        if(map.containsKey(name))
+            return map.get(name);
+        return "No contact found"
+    }
+}

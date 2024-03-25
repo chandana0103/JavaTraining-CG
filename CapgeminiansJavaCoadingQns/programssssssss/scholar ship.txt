@@ -1,0 +1,40 @@
+Package scholorship
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ScholorshipImpl {
+
+	 static HashMap<Integer,Student> hm=new HashMap<Integer,Student>();
+	 static {
+		 hm.put(111, new Student("Alan",111,99));
+		 hm.put(222, new Student("jennifer",222,100));
+		 hm.put(333, new Student("Aarya",333,98));
+		 hm.put(444, new Student("Jen",444,93));
+		 hm.put(555, new Student("Jack",555,55));
+	 }
+	 public void addStudent(Student std) {
+		 hm.put(std.studentId, std);
+	 }
+	 public boolean deleteStudent(int id) {
+		 if(hm.remove(id)==null)
+		 {
+			 return false;
+		 }
+		 else {
+		 return true;
+	 }
+	 }
+	 
+	 public ArrayList<Student> getStudentDetails(String scholorshipScheme){
+		 ArrayList<Student> result=new ArrayList<Student>();
+		 for(Student s:hm.values()) {
+			 if(s.scholorshipScheme.equals(scholorshipScheme)) {
+				 result.add(s);
+			 }
+		 }
+		return result;
+		 
+	 }
+}
+====================================================================================

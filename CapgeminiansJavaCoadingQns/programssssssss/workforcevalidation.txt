@@ -1,0 +1,40 @@
+class Workforce {
+    String firstName;
+    String lastName;
+}
+
+class WorkforceValidation {
+    public String nameValidation(Workforce w, String firstName, String lastName) {
+        try {
+            if(firstName== null || lastName== null) {
+                throw new NullPointerException("Entry Missing");
+            }
+            else if(firstName.length()==0 || lastName.length()==0) {
+                throw new StringIndexOutOfBoundsException("Index out of bound");
+            }
+            else if(Character.isDigit(firstName.charAt(0)) || Character.isDigit(lastName.charAt(0))) {
+                throw new InvalidNameException("First Character is Invalid");
+            }
+        }
+        catch(Exception e) {
+
+        }
+        w.firstName=firstName;
+        w.lastName=lastName;
+        return firstName+lastName;
+   }   
+}
+
+class InvalidNameException extends Exception {
+    
+    public InvalidNameException(String message) {
+        super(message);
+    }
+}
+
+public class source {
+
+    public static void main(String[] args) {
+
+    }
+}

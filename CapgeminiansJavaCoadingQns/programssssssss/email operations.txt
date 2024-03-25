@@ -1,0 +1,72 @@
+class Email	
+{
+	Header header;
+	String body;
+	String greetings;
+
+public Email(Header header,String body,String greetings)
+{
+	this.header = header;
+	this.body = body;
+	this.greetings = greetings;
+
+}
+}
+class Header
+{
+	String from;
+	String to;
+	public Header(String from , String to)
+	{
+		this.from = from;
+		this.to = to;
+	}
+}
+
+
+class EmailOperations
+{
+	public int emailVerify(Email e)
+	{
+		Pattern p = Pattern.compile("[a-zA-Z_]+[0-9]*[@][a-zA-Z]+[/.][a-zA-Z]{2,3}");
+		if(p.matcher(e.header.from).matches() && p.matcher(e.header.to).matches()) 
+		return 2;
+		else if(p.matcher(e.header.from).matches() || p.matcher(e.header.to).matches())
+		 return 1;
+		else 
+		return 0;
+	}
+	public String bodyEncryption(Email e)
+	{
+	 String text = e.body;
+	StringBuilder result= new StringBuilder();
+	int s = 3;
+        for(int i=0; i<text.length(); i++)
+        {
+            if (Character.isUpperCase(text.charAt(i)) && text.charAt(i)!=32)
+            {
+                char ch = (char)(((int)text.charAt(i) +s - 65) % 26 + 65);
+                result.append(ch);
+            }
+            else if(Character.isLowerCase(text.charAt(i)) && text.charAt(i)!=32)
+            {
+                char ch = (char)(((int)text.charAt(i) + s - 97) % 26 + 97);
+                result.append(ch);
+            }
+			else if (text.charAt(i)==32)
+			{
+				    result.append(" ");
+			}
+        }
+       
+        return result.toString();
+
+	}
+	public String greetingMessage(Email e)
+	{
+		String ema = e.header.from;
+		String name1 = ema.substring(0,ema.lastIndexOf("@"));
+		return e.greetings +" "+ name1;
+	}
+
+	}

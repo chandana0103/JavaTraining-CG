@@ -1,0 +1,19 @@
+public class Source {
+    
+    public String listStartToEnd(ArrayList<String> list, int start, int end) {
+        String result="";
+        for(int i=start;i<=end;i++) {
+            result+=list.get(i);
+        }
+        return result;
+    }
+
+    public ArrayList<String> addBefore(ArrayList<String> seriesList, String p, String q) {
+        seriesList.add(seriesList.indexOf(p), q);
+        return seriesList;
+    }
+     
+    public static void main(String[] args) {
+
+    }
+}

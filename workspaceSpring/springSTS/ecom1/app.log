@@ -1,0 +1,30 @@
+2022-02-24 14:41:47,025 INFO com.abc.ecom1.Ecom1Application [restartedMain] Starting Ecom1Application using Java 17.0.1 on LIN66017120 with PID 20656 (C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS\ecom1\target\classes started by cpotllap in C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS\ecom1)
+2022-02-24 14:41:47,026 INFO com.abc.ecom1.Ecom1Application [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-24 14:41:48,184 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-24 14:41:48,185 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 14:41:48,279 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ecom1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-24 14:41:48,421 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 14:41:48,454 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 14:41:48,558 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 14:41:48,623 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-02-24 14:41:48,846 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-02-24 14:41:48,867 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-02-24 14:41:49,270 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 14:41:50,374 INFO com.abc.ecom1.Ecom1Application [restartedMain] Started Ecom1Application in 3.643 seconds (JVM running for 4.27)
+2022-02-24 14:43:16,166 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-02-24 14:43:16,169 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-02-24 14:44:13,016 INFO com.abc.ecom1.Ecom1Application [restartedMain] Starting Ecom1Application using Java 17.0.1 on LIN66017120 with PID 18308 (C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS\ecom1\target\classes started by cpotllap in C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS\ecom1)
+2022-02-24 14:44:13,017 INFO com.abc.ecom1.Ecom1Application [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-24 14:44:14,189 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-02-24 14:44:14,190 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-24 14:44:14,274 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ecom1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-02-24 14:44:14,395 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-24 14:44:14,426 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-24 14:44:14,527 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-24 14:44:14,602 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-02-24 14:44:14,817 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-02-24 14:44:14,837 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-02-24 14:44:15,236 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-24 14:44:16,280 INFO com.abc.ecom1.Ecom1Application [restartedMain] Started Ecom1Application in 3.573 seconds (JVM running for 4.188)
+2022-02-24 14:44:26,885 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-02-24 14:44:26,889 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-1 - Shutdown completed.

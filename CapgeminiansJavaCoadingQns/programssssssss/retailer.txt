@@ -1,0 +1,73 @@
+Retailer
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.*;
+
+class Contract{
+	String retailer;
+	String customer;
+	
+	public Contract(String retailer, String customer) {
+		this.retailer = retailer;
+		this.customer = customer;
+	}
+	
+	
+}
+
+class Receipt{
+	Contract contract;
+	String productQR;
+	public Receipt(Contract contract, String productQR) {
+		this.contract = contract;
+		this.productQR = productQR;
+	}
+	
+	
+}
+
+class PrintReceipt{
+	
+	public int partyVerification(Receipt r) {
+		int count = 0 ;
+		Pattern pattern = Pattern.compile("^[A-Za-z][A-Za-z\\'\\-]+([\\ A-Za-z][A-Za-z\\'\\-]+)*", Pattern.CASE_INSENSITIVE);
+	    Matcher matcher = pattern.matcher(r.contract.customer);
+	    if(matcher.matches()) {
+	    	count++;
+	    }
+	    matcher = pattern.matcher(r.contract.retailer);
+	    if(matcher.matches()) {
+	    	count++;
+	    }
+	    
+		return count;
+	}
+	 
+	public String computeGST(Receipt r) {
+		String[] str = r.productQR.split("@");
+		int result = 0;
+		for(int i=0; i< str.length;i++) {
+			int rate = Integer.parseInt(str[i].substring(0,str[i].indexOf(',')));
+			int qty = Integer.parseInt(str[i].substring(str[i].indexOf(',')+1,str[i].length()));
+			result = result + rate * qty;
+			
+		}
+		result = result * 12;
+		
+		return Integer.toString(result);
+	}
+}
+
+public class Source {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+=========================================================================================================================================

@@ -1,0 +1,62 @@
+public class ExpiryCheck
+{
+	    static boolean  lengthCheck(String s)
+    {
+        if(s.length()==12)
+            return true;
+        return false;
+    }
+    
+     static boolean  batchNumberCheck(String s)
+    {
+      String batch=s.substring(0,4);
+      String checkone=batch.substring(0,1);
+      String checktwo=batch.substring(1,2);
+      String checkthree=batch.substring(3,4);
+      char x=checkone.charAt(0);
+      char y=checktwo.charAt(0);
+      char z=checkthree.charAt(0);
+    
+    if((Character.isUpperCase(x) && Character.isUpperCase(y)) && Character.isUpperCase(z))
+        {
+        try {
+       int intValue = Integer.parseInt(batch.substring(2,3));
+                    return true;
+                } catch (NumberFormatException e) {
+            System.out.println("Input String cannot be parsed to Integer.");
+                }
+        }
+     return false;
+    }
+    
+     static boolean  yearCheck(String s)
+    {
+        String batch=s.substring(4,8);
+        int year =Integer.parseInt(batch);
+        
+        if(year>=2015 && year<=2020)
+                {return true;}
+         else{return false;}
+        
+    }
+    
+    
+     static boolean  monthCheck(String s)
+    {
+         String batch=s.substring(8,10);
+        int month =Integer.parseInt(batch);
+     
+        if(month>=1 && month<=12)
+                {return true;}
+         else{return false;}
+    }
+    
+     static boolean  dayCheck(String s)
+    {   String batch=s.substring(10,12);
+        int day =Integer.parseInt(batch);
+        
+        if(day>=1 && day<=31)
+                {return true;}
+         else{return false;}
+    }
+}

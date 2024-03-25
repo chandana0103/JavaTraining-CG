@@ -1,0 +1,25 @@
+package com.Job.sk;
+
+public class JobRepository {
+		public static String getJobVacancies(int a, String qualification) {
+			String role = null;
+			try {
+				if(a<19) {
+					throw new NotEligibleException("You are underAge for any Job");
+				}else if((a>=21) && (qualification.equalsIgnoreCase("BE"))) {
+					role = "We have Opening For Junior Develepors";
+					System.out.println(role);
+				}else if((a>=26) && (qualification.equalsIgnoreCase("Ms") || qualification.equalsIgnoreCase("phd"))) {
+					role = "We Have Opening For Senior Developers";
+					System.out.println(role);
+				}
+				else if ((a>=19) && ((!(qualification.equalsIgnoreCase("MS"))) && (!(qualification.equalsIgnoreCase("phd"))))) {
+					throw new NotEligibleException("WE DONT HAVE JOBS THAT MATCHES YOUR QUALIFICATION");
+				}
+			}catch(NotEligibleException e) {
+				System.out.println(e.getMessage());
+			}
+			return role;
+			
+		}
+}

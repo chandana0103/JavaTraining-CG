@@ -1,0 +1,31 @@
+2022-03-02 14:14:09,112 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Starting EcomCustomerServiceApplication using Java 17.0.1 on LIN66017120 with PID 17492 (C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS-2\ecom-customer-service\target\classes started by cpotllap in C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS-2\ecom-customer-service)
+2022-03-02 14:14:09,128 DEBUG com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-02 14:14:09,129 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-03-02 14:14:10,134 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-03-02 14:14:10,145 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-02 14:14:10,212 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ecom-customer-service] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-03-02 14:14:10,346 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-02 14:14:10,382 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-02 14:14:10,496 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-02 14:14:10,559 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-03-02 14:14:10,793 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-03-02 14:14:10,813 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-02 14:14:11,203 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-02 14:14:11,675 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Started EcomCustomerServiceApplication in 2.877 seconds (JVM running for 3.622)
+2022-03-02 14:14:53,802 INFO com.zaxxer.hikari.HikariDataSource [Thread-1] HikariPool-1 - Shutdown initiated...
+2022-03-02 14:14:53,804 INFO com.zaxxer.hikari.HikariDataSource [Thread-1] HikariPool-1 - Shutdown completed.
+2022-03-02 14:14:53,884 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Starting EcomCustomerServiceApplication using Java 17.0.1 on LIN66017120 with PID 17492 (C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS-2\ecom-customer-service\target\classes started by cpotllap in C:\Users\cpotllap\Desktop\Training\practice\workspace\springSTS-2\ecom-customer-service)
+2022-03-02 14:14:53,884 DEBUG com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-02 14:14:53,885 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-03-02 14:14:54,051 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-03-02 14:14:54,051 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-02 14:14:54,064 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ecom] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-03-02 14:14:54,085 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-02 14:14:54,088 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2022-03-02 14:14:54,220 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2022-03-02 14:14:54,220 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-02 14:14:54,245 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-02 14:14:54,350 INFO com.abc.ecom.EcomCustomerServiceApplication [restartedMain] Started EcomCustomerServiceApplication in 0.495 seconds (JVM running for 46.297)
+2022-03-02 14:15:59,201 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/ecom] [http-nio-8082-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-02 14:21:22,893 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(16)-127.0.0.1] HikariPool-2 - Shutdown initiated...
+2022-03-02 14:21:22,894 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(16)-127.0.0.1] HikariPool-2 - Shutdown completed.

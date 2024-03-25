@@ -1,0 +1,14 @@
+com\abc\springdemo2\bean\Customer.class
+com\abc\springdemo2\bean\Circle.class
+com\abc\springdemo2\client\ShapeServiceMain.class
+com\abc\springdemo2\service\ShapeService.class
+com\abc\springdemo2\service\ProductService.class
+com\abc\springdemo2\client\CustomerServiceMain.class
+com\abc\springdemo2\bean\Rectangle.class
+com\abc\springdemo2\bean\Square.class
+com\abc\springdemo2\dao\CustomerDao.class
+com\abc\springdemo2\App.class
+com\abc\springdemo2\bean\Shape.class
+com\abc\springdemo2\controller\CustomerController.class
+com\abc\springdemo2\bean\Product.class
+com\abc\springdemo2\service\CustomerService.class

@@ -1,0 +1,666 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+LIST OF OPERATIONS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class ArrayListOps {
+      public ArrayList<Integer> makeArrayListInt(int n)
+	   {
+		   ArrayList<Integer> al=new ArrayList<Integer>();
+		  
+		   for(int i=0;i<n;i++)
+		   {
+			    al.add(0);
+		   }
+		
+		  return al;
+	   }
+	  
+	   public ArrayList<Integer> reverseList(ArrayList<Integer> list)
+		{
+			Collections.reverse(list);
+			return list;			
+		}
+		 public ArrayList<Integer> changeList(ArrayList<Integer> list, int m, int n)
+			{
+				Collections.replaceAll(list,m,n);
+				return list;
+			}
+
+}
+public class Source{
+	public static void main(String[] args) {
+		ArrayList<Integer> list=new ArrayList<Integer>();  
+
+		ArrayListOps alo=new ArrayListOps();
+
+		list.add(15);
+		list.add(1);
+		list.add(20);
+		System.out.println(list);
+		System.out.println(alo.reverseList(list));
+		System.out.println(alo.changeList(list,15,123));
+
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+MOBILE SHOP
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Mobile{
+    // Write your code here..
+		HashMap<String, ArrayList<String>> mobiles = new HashMap<>();
+//	ArrayList<String> al=new  ArrayList<String>();
+	
+	public String addMobile(String company, String model)
+	{
+		if(mobiles.get(company)==null) {
+			
+			mobiles.put(company, new  ArrayList<String>());
+		}
+//		al.add(model);
+		mobiles.get(company).add(model);
+		
+		return "model successfully added";
+	}
+	
+	public ArrayList<String> getModels(String company)
+	{
+
+		return mobiles.get(company);
+		
+	}
+	public String buyMobile(String company, String model)
+	{
+		if(mobiles.get(company)!=null && mobiles.get(company).contains(model) !=false)
+		{
+			mobiles.get(company).remove(new String(model));
+			return "mobile sold successfully";
+		}
+		else 
+		{
+			return "item not available";
+		}
+		
+			
+	
+	}
+
+}
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+		Mobile obj = new Mobile();
+		ArrayList<String> model=new ArrayList<String>();
+		
+		
+		
+		System.out.println(obj.addMobile("Oppo", "K4"));
+		System.out.println(obj.addMobile("Oppo", "K5"));
+		
+		System.out.println(obj.getModels("Oppo"));
+		System.out.println(obj.buyMobile("Oppo", "K5"));
+		System.out.println(obj.buyMobile("Oppo", "K6"));
+
+	}
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+HANDLING STUFF
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Activity{
+  //Implement Activity class here..
+    String string1;
+  String string2;
+  String operator;
+
+  public Activity(String string1,String string2,String operator)
+  {
+    this.string1=string1;
+     this.string2=string2;
+      this.operator=operator;
+    
+  }
+
+}
+
+
+
+public class Source {
+  //Implement the two function given in description in here...
+  public String handleException(Activity a)
+
+  {
+    try
+    {
+          if(a.string1.equals(null) || a.string2.equals(null))
+          {
+              throw new NullPointerException();
+              
+          }
+          if(!a.operator.equals("+") && !a.operator.equals("-"))
+          {
+                throw new Exception();
+                   
+          }
+    }
+    catch(NullPointerException e)
+    {
+        return "Null values found";
+    }
+    catch(Exception e)
+    {
+    	System.out.println(a.operator);
+    	 return a.operator;
+    }
+    return "No Exception Found";
+  }
+  
+  public String doOperation(Activity a)
+  {
+    String result=null;
+    this.handleException(a);
+    
+    switch(a.operator)
+    
+    {
+      case "+":
+             result= a.string1.concat(a.string2);
+              break;
+      case "-":
+              result=a.string1.replace(a.string2,"");
+              break;
+      default:
+            break;
+    }
+    
+    
+    return result;
+  }
+  
+	public static void main(String args[] ) throws Exception {
+    //Write your own main to check the program...
+    Activity obj=new Activity("helloworld","hello","+");
+		
+		Source obj1=new Source();
+		obj1.handleException(obj);
+		obj1.doOperation(obj);
+
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+JOB AGENCY
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class CompanyJobRepository {
+static String getJobPrediction(int age,String highestQualification)throws NotEligibleException{
+		if (age<19){
+			throw new NotEligibleException("You are underage for my job");
+		}
+		else if(!(highestQualification.equals("B.E") || highestQualification.equals("M.S") || highestQualification.equals("PhD"))){
+			throw new NotEligibleException("We do not have any job that matches your qualifications");
+		}
+		else if(age>=21 && age<26 && highestQualification.equals("B.E")){
+			return "We have openings for junior developer";
+		}
+		else if(age>=26 && highestQualification.equals("M.S") || highestQualification.equals("PhD")){
+			return "We have openings for senior developer";
+		}
+		else
+			return "Sorry we have no openings for now";
+	}
+
+}
+
+public class Source {
+	public String searchForJob(int age, String highestQualification)throws NotEligibleException{
+		if(age>=200 || age<=0){
+			throw new NotEligibleException("The age entered is not typical for a human being");
+		}
+		else{
+			try{
+				String s=CompanyJobRepository.getJobPrediction(age,highestQualification);
+				return s;
+			}
+			catch(NotEligibleException e){
+				return e.getMessage();
+			}
+		}
+    }
+
+	public static void main(String args[] )  {
+		/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+		Source source=new Source();
+		String s="Hello";
+		try{
+			s=source.searchForJob(27,"PhD");
+		}
+		catch(NotEligibleException e){
+			System.out.println(e.getMessage());
+		}
+		System.out.println(s);
+
+
+	}
+}
+class NotEligibleException extends Exception {
+	public NotEligibleException(String message){
+		super(message);
+	}
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+HIRING ON:
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Candidate{
+  	private String name;
+	private int id;
+	private int age;
+	private String gender;
+	private String department;
+	private int yearOfJoining;
+	private double salary;
+	public Candidate(int id, String name, int age, String gender, String department, int yearOfJoining, double salary) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.age = age;
+		this.gender = gender;
+		this.department = department;
+		this.yearOfJoining = yearOfJoining;
+		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public int getYearOfJoining() {
+		return yearOfJoining;
+	}
+	public void setYearOfJoining(int yearOfJoining) {
+		this.yearOfJoining = yearOfJoining;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+  //Write Your Code Here..
+     @Override
+    public String toString() {
+        return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", department="
+                + department + ", yearOfJoining=" + yearOfJoining + ", salary=" + salary + "]";
+    }
+}
+
+class Implementation{
+  //Write Your Code Here..
+   public static Map<String,Long> getCount(List<Candidate>list){
+    Map<String,Long>count=new HashMap<>();
+    long female=list.stream().filter((gender)->gender.getGender().contains("Female")).count();  
+    long male=list.stream().filter((gender)->gender.getGender().contains("Male")).count();
+    if(female>0)
+      count.put("Female",female);
+    if(male>0)
+      count.put("Male",male);
+	return count;
+  }
+  public static Map<String, Double>getAverageAge(List<Candidate>list){
+    Map<String,Double>average=new HashMap<>();
+    OptionalDouble averagefemale=list.stream().filter((gender)->gender.getGender().contains("Female")).mapToDouble((age)->age.getAge()).average();
+    OptionalDouble averagemale=list.stream().filter((gender)->gender.getGender().contains("Male")).mapToDouble((age)->age.getAge()).average();
+       if(averagefemale.isPresent())
+      average.put("Female",averagefemale.getAsDouble());
+       if(averagemale.isPresent())
+      average.put("Male",averagemale.getAsDouble());
+     return average;
+    }
+  public static Map<String,Long>countCandidatesDepartmentWise(List<Candidate>list){
+    long productdevelop=list.stream().filter((product)->product.getDepartment().contains("Product Development")).count();
+    long s_m=list.stream().filter((sm)->sm.getDepartment().contains("Sales And Marketing")).count();
+    long s_t=list.stream().filter((st)->st.getDepartment().contains("Security And Transport")).count();
+    long hr=list.stream().filter((st)->st.getDepartment().contains("HR")).count();
+    long infra=list.stream().filter((infras)->infras.getDepartment().contains("Infrastructure")).count();
+    long a_f=list.stream().filter((af)->af.getDepartment().contains("Account And Finance")).count();
+    Map<String,Long>count=new HashMap<>();
+    if(productdevelop>0)
+    count.put("Product Development",productdevelop);
+    if(s_m>0)
+    count.put("Sales And Marketing",s_m);
+    if(s_t>0)
+    count.put("Security And Transport",s_m);
+    if(hr>0)
+    count.put("HR",hr);
+    if(infra>0)
+    count.put("Infrastructure",infra);
+    if(a_f>0)
+    count.put("Account And Finance",a_f);
+    return count;
+  }
+  public static Optional<Candidate> getYoungestCandidateDetails(List<Candidate>list){
+	  Optional<Candidate>candidate=list.stream().filter((male)->
+	  male.getGender().contains("Female")).filter((department)->department.getDepartment().contains("Product Development")).min((p1,p2)->p1.getAge()-p2.getAge());
+	  if(candidate.isPresent()) {
+		  candidate.get();
+	  }
+	  Optional<Candidate>candidate1=list.stream().filter((male)->
+	  male.getGender().contains("Male")).filter((department)->department.getDepartment()   .contains("Product Development")).min((p1,p2)->p1.getAge()-p2.getAge());
+	  if(candidate1.isPresent()) {
+		  candidate1.get();
+	  }
+	  return candidate1;
+  }
+
+}
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    List<Candidate>list=new ArrayList<>();
+		list.add(new Candidate(111,"Damon Salvatore",23,"Male","Product Development",2009,70000));
+		list.add(new Candidate(222,"Elena Gilbert",25,"Female","Product Development",2012,50000));		
+		list.add(new Candidate(333,"Stefan Salvatore",30,"Male","Product Development",2009,60000));
+		list.add(new Candidate(444,"Carolyn Forbes",26,"Female","Product Development",2010,65000));
+		Implementation.getCount(list);
+    Implementation.getAverageAge(list);
+    Implementation.countCandidatesDepartmentWise(list);
+    Implementation.getYoungestCandidateDetails(list);
+
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+EMAIL OPERATION
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Email{
+// Implement Email Class according to the specifiaction.
+	Header header;
+	String body;
+	String greetings;
+
+	public Email(Header header, String body, String greetings) {
+		super();
+		this.header = header;
+		this.body = body;
+		this.greetings = greetings;
+	}
+}
+
+class Header{
+// Implemet the Header Class according to the specifiaction.
+	String from;
+	String to;
+	public Header(String from, String to) {
+		super();
+		this.from = from;
+		this.to = to;
+	}	
+}
+class EmailOperations{
+// Implemet the Three methods specified in the specified.	
+ public static int emailVerify(Email e) {
+		String string = "^([a-zA-Z_]{1}[a-zA-Z]+)@([a-zA-Z]+)\\.([a-zA-Z]{2,30})$";
+		int value;
+		boolean m1, m2;
+		m1 = Pattern.matches(string, e.header.from);
+		m2 = Pattern.matches(string, e.header.to);
+		if (m1 && m2 == true)
+			value=2;
+		else if (m1 || m2 == true)
+			value=1;
+		else
+			value=0;
+		//System.out.println(value);
+         return value;
+	}
+	  public static String bodyEncryption(Email e) {
+		  StringBuffer result= new StringBuffer();
+		  
+	        for (int i=0; i<e.body.length(); i++)
+	        {
+	            if (Character.isUpperCase(e.body.charAt(i)))
+	            {
+	                char ch = (char)(((int)e.body.charAt(i) +
+	                                  3 - 65) % 26 + 65);
+	                result.append(ch);
+	            }
+	            else if(Character.isSpace(e.body.charAt(i))) {
+	            	result.append(e.body.charAt(i));
+	            }
+	            else
+	            {
+	                char ch = (char)(((int)e.body.charAt(i) +
+	                                  3 - 97) % 26 + 97);
+	                result.append(ch);
+	            }
+	        }
+	        //System.out.println(result.toString());
+	        return result.toString();
+	  }
+public static String greetingMessage(Email e) {
+		 String string1=e.greetings;
+		 String string2=e.header.from;
+			int i= string2.indexOf("@");
+		 StringBuffer sb=new StringBuffer();
+				 sb.append(string2);
+		 StringBuffer sb2=sb.delete(i, sb.length());
+		 String concat=string1.concat(" ").concat(sb2.toString());
+		// System.out.println(concat);
+		 return concat;
+	  }
+}
+
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    // You can Implement your main() to check your Program.
+		String from = "Jesirupa@gmail.com";
+		String to = "jesintha@gmail.com";
+		Header e = new Header(from, to);
+		String body = "Hi How Are You";
+		String greetings = "Regards";
+		Email email = new Email(e, body, greetings);
+		EmailOperations.emailVerify(email);
+		EmailOperations.bodyEncryption(email);
+		EmailOperations.greetingMessage(email);
+}
+}
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+VALIDATING USER
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+import java.lang.*;
+import java.util.regex.*;
+
+class TransactionParty {
+  String seller;
+	String buyer;
+	public TransactionParty(String seller, String buyer) {
+		super();
+		this.seller = seller;
+		this.buyer = buyer;
+	}  
+    
+}
+
+class Receipt{
+  TransactionParty transactionParty;
+	String productsQR;
+	public Receipt(TransactionParty transactionParty, String productsQR) {
+		super();
+		this.transactionParty = transactionParty;
+		this.productsQR = productsQR;
+	}     
+}
+
+
+class GenerateReceipt{
+   public static int verifyParty(Receipt r) {
+		String regex= "[A-Za-z]{1}[A-Za-z\\'\\s]+|[A-Za-z\\s-]+[A-Za-z]{1}";
+		int value;
+		boolean m1,m2;
+		m1=Pattern.matches(regex, r.transactionParty.seller);
+		m2=Pattern.matches(regex, r.transactionParty.buyer);
+		if(m1&&m2==true)
+			value=2;
+		else if(m1||m2==true)
+			value=1;
+		else
+			value=0;
+		return value;	
+	}
+	public static String calcGST(Receipt r) {
+		int gst=0; float gst_rate=0.12F;
+	    String[]pairs=r.productsQR.split("@");
+	   	    for(String pair:pairs) {
+	    	String[] rateQty=pair.split(",");
+	    	String rate=rateQty[0];
+	    	String quantity=rateQty[1];
+	    	int total=(Integer.parseInt(rate))*(Integer.parseInt(quantity));
+	    	gst=gst+total;
+	    }
+    	gst=(int)(gst*gst_rate);
+	   return Integer.toString(gst); 	
+	    } 
+}
+class Source{
+  public static void main(String[] args){
+    
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+EMPLOYEE VERIFICATION
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
+class Employee {
+    String name;
+    int salary;
+public Employee(String name,int salary){
+    this.name = name;
+    this.salary = salary;
+}
+public String getName(){
+    return name;
+}
+public void setName(String name){
+    this.name= name;
+}
+public int getSalary(){
+    return salary;
+}
+public void setSalary(int salary){
+    this.salary = salary;
+}
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        sb.append("name: ");
+        sb.append(name);
+        sb.append(" salary: ");
+        sb.append("" + salary+">");
+        return sb.toString();
+
+    }
+}
+class EmployeeInfo{
+    enum SortMethod {BYNAME,BYSALARY};
+    public List<Employee> sort(List<Employee> emps,final SortMethod method){
+        Comparator<Employee> comparator;
+        if(method == SortMethod.BYNAME) {
+	    comparator = Comparator.comparing(Employee::getName);
+      // System.out.println(comparator);
+       }
+        else {
+	        comparator = Comparator.comparing(Employee::getSalary);
+	        //System.out.println(comparator);
+        }
+       
+       
+	return emps.stream().sorted(comparator).collect(Collectors.toList());
+ }
+public boolean isCharacterPresentInAllNames(Collection<Employee> entities,String character){
+   // int count=0;
+    long cnt = entities.stream().filter(x -> x.name.startsWith(character)).count();
+    if(cnt==1 )
+        return true;
+    else
+        return false;    
+ }
+/*public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Employee> emps = new ArrayList<>();
+emps.add(new Employee("Mickey", 100000));
+emps.add(new Employee("Timmy", 50000));
+emps.add(new Employee("Annny", 40000));
+		EmployeeInfo EI = new EmployeeInfo();
+	     EI.sort(empList,EmployeeInfo.SortMethod.BYSALARY);		
+		boolean result = EI.isCharacterPresentInAllNames(empList, "K");
+
+		//System.out.println(empList);
+		
+		/*if(result == true)
+			System.out.println("Present");
+		else
+			System.out.println("Missing");
+
+	}*/
+}

@@ -1,0 +1,17 @@
+package com.abc.ecom.service;
+
+import java.util.List;
+import com.abc.ecom.entity.CustomerEntity;
+
+public interface CustomerService {
+
+	public CustomerEntity saveCustomer(CustomerEntity customer);
+
+	 public List<CustomerEntity> getAllCustomers();
+
+	 public CustomerEntity getCustomerById(int customerId);
+
+	 public void deleteCustomer(int customerId);
+
+	 public CustomerEntity updateCustomer(CustomerEntity customer);
+}

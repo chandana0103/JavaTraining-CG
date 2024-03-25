@@ -1,0 +1,28 @@
+package com.abc.orderservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.abc.orderservice.model.CustomerModel;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	public CustomerModel getProductDetails(int customerId) {
+		CustomerModel customer = null;
+        String resourceUrl = "http://ecom-customer-service/ecom/customer/get/" + customerId;
+        ResponseEntity<CustomerModel>customerResponseEntity = restTemplate.getForEntity(resourceUrl, CustomerModel.class);
+        if (customerResponseEntity.getStatusCode() == HttpStatus.OK) {
+        	customer = customerResponseEntity.getBody();
+            return customer;
+        }
+ 
+        return customer;
+    }
+}

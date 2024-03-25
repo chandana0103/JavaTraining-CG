@@ -1,0 +1,13 @@
+
+package com.abc.orderservice.model;
+
+import com.abc.orderservice.entity.OrderEntity;
+
+public class OrderDetails {
+	
+	private OrderEntity order;
+	private ProductModel product;
+	private CustomerModel customer;
+	
+
+}
